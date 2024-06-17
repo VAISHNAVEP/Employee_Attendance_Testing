@@ -17,6 +17,10 @@ app.use(
 app.use(cookieParser());
 app.use("/", UserRoutes);
 
+app.use("/", () => {
+  console.log("good");
+});
+
 const PORT = process.env.PORT || process.env.PORT1;
 const MONGO_URI = process.env.MONGO_URI;
 
@@ -33,4 +37,3 @@ mongoose
 app.listen(PORT, () => {
   console.log(`Server running successfully`);
 });
-
